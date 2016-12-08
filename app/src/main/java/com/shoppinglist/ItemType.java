@@ -1,11 +1,19 @@
 package com.shoppinglist;
 
+import java.util.Set;
+
 /**
  * Created by dekel31 on 12/3/2016.
  */
 public class ItemType {
     private String name;
     private boolean included;
+    int price;
+    int quantity;
+    Set<Market> markets;
+    Section section;
+    Category category;
+    UseInterval useInterval;
 
     public ItemType(String name) {
         this.name = name;
