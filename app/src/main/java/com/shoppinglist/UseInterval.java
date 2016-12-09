@@ -5,6 +5,7 @@ package com.shoppinglist;
  */
 public enum UseInterval {
     ONCE_A_WEEK,
+    BI_WWEKLY,
     ONCE_A_MONTH,
     BI_MONTHLY
 }

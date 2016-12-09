@@ -5,4 +5,7 @@ package com.shoppinglist;
  */
 
 public enum Section {
+    HEALTH,
+    FREEZER,
+    CEREAL, EGGS, SNACKS, VEGETABLES, NUTS;
 }

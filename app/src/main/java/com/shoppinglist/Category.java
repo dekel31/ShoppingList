@@ -7,5 +7,5 @@ package com.shoppinglist;
 public enum Category {
     HYGIENE,
     INSTANT,
-
+    TWENTY_MINUTES, TEN_MINUTES, COOKING_INGIRIDIENT;
 }
