@@ -1,5 +1,7 @@
 package com.shoppinglist;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.util.Pair;
 
 import java.util.ArrayList;
@@ -37,7 +39,10 @@ public class ItemType {
         this.category = category;
         this.useInterval = useInterval;
         this.expiration = expiration;
+    }
 
+    public ItemType(String name){
+        this.name = name;
     }
 
     public ItemType(String name, String displayName, String description, int defaultQuantity, Set<Pair<Market, Integer>> marketsAndPrice, Section section, Category category, UseInterval useInterval, Expiration expiration, float defaultServings) {
@@ -61,7 +66,7 @@ public class ItemType {
         itemTypes.add(new ItemType("Onion", "בצל", 4, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{4, 4}), VEGETABLES, COOKING_INGIRIDIENT, BI_MONTHLY, TWO_WEEKS));
 //        itemTypes.add(new ItemType("Cheese", "גבנץ", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
 //        itemTypes.add(new ItemType("Grisini", "גריסיני", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
-        itemTypes.add(new ItemType("Nuts", "פיצוחים", "גרעינים שחורים לבנים פיסטוק אגוזי מלך", 700, buildMarketAndPrice(new Market[]{FLEA_MARKET}, new int[]{27}), NUTS, INSTANT, BI_WWEKLY, YEAR, ));
+//        itemTypes.add(new ItemType("Nuts", "פיצוחים", "גרעינים שחורים לבנים פיסטוק אגוזי מלך", 700, buildMarketAndPrice(new Market[]{FLEA_MARKET}, new int[]{27}), NUTS, INSTANT, BI_WWEKLY, YEAR, ));
         itemTypes.add(new ItemType("Syria Olives", "זיתים סורים", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
         itemTypes.add(new ItemType("Olive Rings", "זיתים טבעות", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
         itemTypes.add(new ItemType("Butter", "חמאה", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
@@ -79,17 +84,17 @@ public class ItemType {
         itemTypes.add(new ItemType("Tomatoes", "עגבניות", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
         itemTypes.add(new ItemType("Cucumber", "מלפפונים", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
         itemTypes.add(new ItemType("Apples", "תפוחים", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
-        itemTypes.add(new ItemType("Lentils", "עדשים", "ירוקות כתומות שחורות", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
+//        itemTypes.add(new ItemType("Lentils", "עדשים", "ירוקות כתומות שחורות", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
         itemTypes.add(new ItemType("Amba", "עמבה", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
         itemTypes.add(new ItemType("Parsley", "פטרוזיליה כוסברה", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
         itemTypes.add(new ItemType("Prichoniot", "פריכוניות", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
         itemTypes.add(new ItemType("Cottage Cheese", "קוטג'", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
-        itemTypes.add(new ItemType("Special flour", "קמח מיוחד", "חומוס או עדשים כתומות", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
+//        itemTypes.add(new ItemType("Special flour", "קמח מיוחד", "חומוס או עדשים כתומות", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
         itemTypes.add(new ItemType("Garlic", "שום כתוש", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
         itemTypes.add(new ItemType("Chocolate", "שוקולד מריר", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
         itemTypes.add(new ItemType("Olive Oil", "שמן זית", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
         itemTypes.add(new ItemType("Sour cream", "שמנת חמוצה", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
-        itemTypes.add(new ItemType("Spices", "תבליינים", "פפריקה מתוקה, אורגנו, כמון", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
+//        itemTypes.add(new ItemType("Spices", "תבליינים", "פפריקה מתוקה, אורגנו, כמון", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
         itemTypes.add(new ItemType("Dates", "תמרים לחים", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
         itemTypes.add(new ItemType("Dates", "תמרים", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
         itemTypes.add(new ItemType("Rice Noodles", "אטריות אורז", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
@@ -97,6 +102,7 @@ public class ItemType {
         itemTypes.add(new ItemType("Potatoes", "תפוא", 30, buildMarketAndPrice(new Market[]{FLEA_MARKET, SHUFERSAL}, new int[]{30, 35}), HEALTH, INSTANT, BI_MONTHLY, YEAR));
     }
 
+    @TargetApi(Build.VERSION_CODES.ECLAIR)
     private static Set<Pair<Market, Integer>> buildMarketAndPrice(Market[] markets, int[] prices) {
         HashSet<Pair<Market, Integer>> marketsAndPrice = new HashSet<>();
         for (int i = 0; i < markets.length; i++) {
